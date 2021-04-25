@@ -1,0 +1,37 @@
+CREATE DATABASE SistemaCobranza
+
+Create Table CLIENTE(
+Numdecuenta, INT
+NombreCliente, Varchar(150)
+ApellidoCliente, Varchar(150)
+PRIMARY KEY(Numdecuenta),);
+
+Create Table CONTACTO(
+clienteID, INT
+telefono1, INT
+telefoino2, INT
+celular, INT
+e-mail, Varchar(50)
+PRIMARY KEY(clienteID),
+FOREIGN KEY(clienteID), REFERENCES CLIENTE (Numdecuenta),);
+
+Create Table Saldo(
+Numdecuenta, INT
+Saldo, FLOAT
+D_efectivo, FLOAT
+UltimoPago, DATE
+Dia_de_corte, INT
+Mes_de_corte, INT
+PRIMARY KEY(Numdecuenta),
+FOREIGN KEY(Numbdecuenta), REFERENC CLIENTE (Numdecuenta),);
+
+Create Table Domiciolio(
+Numdecuenta, INT
+Calle, Varchar(150)
+Colonia, Varchar(150)
+Poblacion, Varchar(50)
+CódigoPostal, INT
+PRIMARY KEY(Numdecuenta),
+FOREIGN KEY(Numdecuenta), REFERENCES tablename(Numdecuenta),);
+
+
